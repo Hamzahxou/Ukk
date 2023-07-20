@@ -1,0 +1,611 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* dark */
+  --bg-dark: #343a40;
+  --bg-dark-2: #292d31;
+  --color-dark: #242424;
+  --color-dark-text: #3a3a3a;
+  /* light */
+  --bg-light: #cacaca;
+  --bg-light-2: #f2f2f2;
+  --color-light: #aaacc9;
+  /* red */
+  --color-red: #dc3545;
+  /* orange */
+  --color-orange: #ffa500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-dark-2);
+}
+
+/* loadingHalo */
+.loadingHalo {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-dark);
+  font-size: 2rem;
+  color: var(--bg-light);
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  user-select: none;
+  z-index: 9999999;
+}
+
+.swal2-container {
+  z-index: 9999999;
+}
+
+/* reset display none */
+body header,
+body main,
+body footer,
+body .darkmode {
+  display: none;
+}
+
+/* kembalikan display */
+body header.reappear,
+body footer.reappear,
+body .darkmode.reappear {
+  display: flex;
+}
+
+body main.reappear {
+  display: block;
+}
+
+/* headerDesain */
+header {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  background-color: var(--bg-light);
+  z-index: 999999;
+}
+
+header a {
+  color: var(--color-dark);
+}
+
+header .logo {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+header .logo span {
+  color: var(--color-red);
+}
+
+header .menu {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: none;
+}
+
+header nav {
+  position: relative;
+}
+
+header nav.active {
+  right: 0px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  font-weight: 700;
+  transition: 0.5s;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: var(--color-red);
+}
+
+/* sectionStart */
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* section Mode */
+body section.notActive {
+  display: none;
+}
+
+section .titleSection {
+  margin: 40px 0;
+  text-align: center;
+  margin-top: 90px;
+  color: var(--bg-dark-2);
+}
+
+body.dark section .titleSection {
+  color: var(--bg-light);
+}
+
+section .titleSection span {
+  color: var(--color-red);
+}
+body.dark section .titleSection span {
+  color: var(--color-orange);
+}
+/* section Home */
+section.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-light-2);
+}
+
+section.home .containerHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 90%;
+}
+
+section.home .containerHome .textHome {
+  width: 60%;
+  margin-left: 20px;
+}
+
+section.home .containerHome .textHome h1 {
+  color: var(--color-red);
+}
+body.dark section.home .containerHome .textHome h1 {
+  color: var(--color-orange);
+}
+section.home .containerHome .textHome h1 {
+  color: var(--color-red);
+}
+
+section.home .containerHome .textHome p {
+  color: var(--bg-dark-2);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+body.dark section.home .containerHome .textHome p {
+  color: var(--bg-light-2);
+}
+
+section.home .containerHome .profileHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  margin-right: 20px;
+}
+
+section.home .containerHome .profileHome .imgArea {
+  border-radius: 20px;
+  width: 200px;
+  overflow: hidden;
+}
+section.home .containerHome .profileHome .imgProfile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+section.home .containerHome .profileHome .imgProfile:hover {
+  transform: scale(1.1);
+}
+section.home .containerHome .profileHome h3 {
+  text-align: center;
+  color: var(--bg-dark-2);
+}
+body.dark section.home .containerHome .profileHome h3 {
+  color: var(--bg-light-2);
+}
+
+section.home .priview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+  z-index: 99999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+section.home .priview.active {
+  display: flex;
+}
+
+section.home .priview .contentPriview {
+  background-color: var(--bg-light);
+  color: var(--color-dark-text);
+  display: flex;
+  width: 80%;
+  height: 70%;
+  border-radius: 10px;
+}
+
+section.home .priview .contentPriview .imgContent {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.home .priview .contentPriview img {
+  border-radius: 20px;
+  width: 80%;
+}
+
+section.home .priview .contentPriview .textContent {
+  width: 65%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+section.home .priview .contentPriview .textContent h1 {
+  margin-top: 50px;
+}
+section.home .priview .contentPriview .textContent p {
+  margin-top: 50px;
+}
+/* section Galeri */
+section.galeri {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-light);
+}
+
+section.galeri .containerGaleri {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+}
+
+section.galeri .containerGaleri table tr {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section.galeri .containerGaleri img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+section.galeri .containerGaleri .ProjectImg {
+  cursor: pointer;
+}
+
+section.galeri .boxProject.active {
+  display: flex;
+  backdrop-filter: blur(20px);
+}
+section.galeri .boxProject {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+section.galeri .informasiGaleri {
+  position: relative;
+  background-color: var(--bg-light-2);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+section.galeri .informasiGaleri .demo {
+  color: var(--color-orange);
+}
+
+section.galeri .informasiGaleri .close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--bg-light);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* section Tugas */
+section.tugas {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-light-2);
+}
+
+section.tugas .containerTugas {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 350px;
+  margin-bottom: 40px;
+}
+section.tugas .containerTugas #TugasList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section.tugas .containerTugas input {
+  padding: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid var(--bg-light-2);
+  border-radius: 10px;
+  outline: none;
+  background-color: transparent;
+  color: var(--bg-dark-2);
+}
+
+section.tugas .containerTugas button {
+  padding: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background-color: var(--color-red);
+  color: var(--bg-light-2);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section.tugas .containerTugas h3 {
+  margin: 10px 0;
+  color: var(--bg-dark-2);
+}
+
+body.dark section.tugas .containerTugas h3 {
+  color: var(--bg-light);
+}
+
+section.tugas .containerTugas .outputList .Task {
+  margin-left: 20px;
+}
+
+section.tugas .containerTugas .outputList .Task li {
+  margin: 10px 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--bg-dark-2);
+  cursor: pointer;
+}
+
+body.dark section.tugas .containerTugas .outputList .Task li {
+  color: var(--bg-light);
+}
+/* darkmode */
+.darkmode {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  background-color: var(--bg-dark);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.darkmode::before {
+  content: "🌚";
+}
+
+/* kondisi dark */
+body.dark .darkmode {
+  background-color: var(--bg-light);
+}
+body.dark .darkmode::before {
+  content: "🌕";
+}
+
+body.dark header,
+body.dark footer {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #535358;
+  backdrop-filter: blur(10px);
+}
+
+body.dark footer p {
+  color: var(--bg-light-2);
+}
+
+body.dark header a {
+  color: var(--color-light);
+}
+body.dark header .logo span {
+  color: var(--color-orange);
+}
+
+body.dark header nav ul li a.active,
+body.dark header nav ul li a:hover {
+  color: var(--color-orange);
+}
+
+body.dark section.home,
+body.dark section.tugas,
+body.dark section.galeri .informasiGaleri {
+  background-color: var(--bg-dark);
+  color: var(--color-light);
+}
+
+body.dark section.galeri,
+body.dark section.tugas .containerTugas,
+body.dark section.galeri .informasiGaleri .close,
+body.dark section.home .priview .contentPriview {
+  background-color: var(--bg-dark-2);
+  color: var(--color-light);
+}
+
+body.dark section.tugas input {
+  color: var(--bg-light-2);
+  border-color: var(--bg-dark);
+}
+
+body.dark section.tugas button {
+  background-color: var(--color-orange);
+}
+
+/* footer end */
+footer {
+  padding: 0.5rem;
+  font-size: 10px;
+  background-color: var(--bg-light);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+/* responsifMode */
+@media (max-width: 576px) {
+  header .menu {
+    display: block;
+  }
+  header nav {
+    position: absolute;
+    top: 50px;
+    right: -100%;
+    width: 200px;
+    background-color: var(--bg-light);
+    transition: 0.5s;
+  }
+
+  /* darkmode */
+  body.dark header nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(100px);
+    z-index: 99;
+  }
+
+  body.dark header .menu {
+    color: var(--color-light);
+  }
+
+  header nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  header nav ul li:first-child {
+    margin-top: 10px;
+  }
+  header nav ul li:last-child {
+    margin-bottom: 20px;
+  }
+
+  header nav ul li a {
+    display: block;
+    width: 100%;
+  }
+
+  section.home .containerHome .textHome {
+    width: 90%;
+  }
+
+  section.home .containerHome .textHome h1 {
+    font-size: 1rem;
+  }
+
+  section.home .containerHome .textHome p {
+    width: 80%;
+    color: var(--bg-dark-2);
+    font-size: 13px;
+  }
+  body.dark section.home .containerHome .textHome p {
+    color: var(--bg-light);
+  }
+
+  section.home .containerHome .profileHome {
+    display: none;
+  }
+
+  section.galeri .informasiGaleri {
+    padding: 1rem;
+    width: 80%;
+  }
+
+  section.galeri .informasiGaleri img {
+    width: 250px;
+  }
+
+  section.galeri .informasiGaleri .close {
+    top: -5px;
+    right: -5px;
+  }
+
+  section.tugas .containerTugas {
+    width: 90%;
+  }
+}
+
+@media (min-width: 800px) {
+  section.home .priview .contentPriview img {
+    width: 200px;
+  }
+}
+@media (min-width: 992px) {
+  section.galeri .containerGaleri {
+    width: 1000px;
+  }
+}

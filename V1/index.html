@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamzahxou</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="dark">
+    <div class="loadingHalo"></div>
+
+    <header>
+      <div class="logo">
+        <a href="#">Hamzah <span>xou</span></a>
+      </div>
+
+      <div class="menu bx bx-menu-alt-right"></div>
+      <nav>
+        <ul>
+          <li><a href="#Home" class="active">Home</a></li>
+          <li><a href="#Galeri">Galeri</a></li>
+          <li><a href="#Tugas">Tugas</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="Home" class="home">
+        <div class="containerHome">
+          <div class="textHome">
+            <h1
+              data-aos="fade-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              Selamat datang di website saya
+            </h1>
+
+            <p
+              data-aos="fade-right"
+              data-aos-delay="400"
+              data-aos-duration="2000"
+            >
+              Hi, saya hamzah, hanya seorang pelajar smk.
+            </p>
+          </div>
+          <div class="profileHome">
+            <div class="imgArea">
+              <img
+                data-aos="fade-left"
+                data-aos-delay="100"
+                data-aos-duration="1500"
+                class="imgProfile"
+                src="../img/dark.png"
+                alt="Hamzah"
+              />
+            </div>
+            <h3
+              data-aos="fade-left"
+              data-aos-delay="700"
+              data-aos-duration="3000"
+            >
+              Muhammad Hamzah Fansuri
+            </h3>
+          </div>
+        </div>
+        <div class="priview">
+          <div class="contentPriview">
+            <div class="imgContent">
+              <img src="../img/dark1.jpg" alt="hamzahxou" />
+            </div>
+            <div class="textContent">
+              <h1>Hamzahxou</h1>
+              <p>
+                Halo, nama saya Hamzah. Saya seorang pelajar SMK jurusan PPLG.
+                Bidang minat saya adalah Web dan Game Developer, saya
+                Bercita-cita ingin membantu dalam pembangunan dunia yang modern
+                akan teknologi
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="Galeri" class="galeri">
+        <h2 class="titleSection" data-aos="fade-up">
+          Galeri - <span>Project</span>
+        </h2>
+        <div class="containerGaleri">
+          <table>
+            <tr>
+              <th>
+                <img
+                  data-aos="flip-down"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="1000"
+                  class="ProjectImg"
+                  src="../img/Project1_dark.png"
+                  alt="Project"
+                />
+                <div class="boxProject">
+                  <div class="informasiGaleri">
+                    <div class="close">X</div>
+                    <img src="../img/Project1_dark.png" alt="Project" />
+                    <h4>Website desain</h4>
+                    <p>desain simple yang dibuat dengan html,css dan js</p>
+                  </div>
+                </div>
+              </th>
+
+              <th>
+                <img
+                  data-aos="flip-up"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="2000"
+                  class="ProjectImg"
+                  src="../img/Project2_dark.png"
+                  alt="Project"
+                />
+                <div class="boxProject">
+                  <div class="informasiGaleri">
+                    <div class="close">X</div>
+                    <img src="../img/Project2_dark.png" alt="Project" />
+                    <h4>Website Portofolio</h4>
+                    <p>
+                      web poertofolio pertama saya yang saya hosting di github
+                      <br />
+                      <a class="demo" href="https://hamzahxou.github.io/"
+                        >hamzahxou.github.io</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </th>
+
+              <th>
+                <img
+                  data-aos="flip-down"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="1000"
+                  class="ProjectImg"
+                  src="../img/blog.png"
+                  alt="Project"
+                />
+                <div class="boxProject">
+                  <div class="informasiGaleri">
+                    <div class="close">X</div>
+                    <img src="../img/blog.png" alt="Project" />
+                    <h4>blog artikel</h4>
+                    <p>
+                      blog yang saya buat dengan framework nodejs, Hexo <br />
+                      <a class="demo" href="https://blogworlds.github.io/"
+                        >blogworlds.github.io</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="Tugas" class="tugas">
+        <h2 class="titleSection" data-aos="fade-up">
+          Tugas - <span>page</span>
+        </h2>
+        <div
+          class="containerTugas"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        >
+          <form id="TugasList" name="formList">
+            <input type="text" name="tugas" placeholder="ketik Tugas" />
+            <button type="submit" id="bubmit">Kirim</button>
+          </form>
+          <h3>Task:</h3>
+          <div class="outputList">
+            <ul class="Task">
+              <li id="namaTugas">Membuat rangkuman materi dasar html</li>
+              <li id="namaTugas">Memahami penggunaan js sebelum react</li>
+              <li id="namaTugas">Memahami penggunaan react</li>
+              <li id="namaTugas">Memahami bahasa c# untuk program unity</li>
+              <li id="namaTugas">Memahami penggunaan aseprite</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="darkmode"></div>
+    <footer>
+      <p>copyright &copy; 2023 - hamzahxou</p>
+      <p>All Right Reserved</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
