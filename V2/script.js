@@ -12,8 +12,11 @@ const sections = document.querySelectorAll("section");
 function setActive(index) {
   sections.forEach((section, i) => {
     section.classList.toggle("notActive", i !== index);
+    // jika i sama dengan index maka class notActive adalah remove
+    // jika i tidak sama dengan index maka class notActive adalah add
   });
 }
+
 //kondisi active menu
 const menulink = document.querySelectorAll("ul li a");
 menulink.forEach((satu, index) => {
@@ -21,11 +24,10 @@ menulink.forEach((satu, index) => {
     e.preventDefault();
 
     setActive(index);
-
     menulink.forEach((dua) => {
-      dua.classList.remove("active");
+      dua.classList.remove("active"); // saat di klik buat semua nya remove class acive
     });
-    satu.classList.add("active");
+    satu.classList.add("active"); // yang di klik beri class active
   });
 });
 
@@ -107,8 +109,9 @@ formList.addEventListener("submit", (e) => {
     inputTugas.value = "";
     localStorage.setItem("tugas", TaskList.innerHTML);
   }
-});
 
+  tugascekKosongga();
+});
 function cekTugas(tugas) {
   const listItems = TaskList.querySelectorAll("li");
   let datakembar = false;
@@ -122,6 +125,18 @@ function cekTugas(tugas) {
   return datakembar;
 }
 
+function tugascekKosongga() {
+  const listTugas = document.querySelectorAll(".Task li");
+  let k = document.querySelector(".testt");
+  if (listTugas.length === 0) {
+    k.style.display = "block";
+    k.textContent = "hebat semua tugas kelar";
+  } else {
+    k.style.display = "none";
+  }
+}
+
+tugascekKosongga();
 TaskList.addEventListener("click", (e) => {
   const targetTugas = e.target;
   if (targetTugas.matches("#namaTugas")) {
@@ -142,9 +157,50 @@ TaskList.addEventListener("click", (e) => {
           text: "1 Tugas telah kelar.",
           confirmButtonColor: "#28a745",
           confirmButtonText: "Horee",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            const jsConfetti = new JSConfetti();
+            jsConfetti.addConfetti({
+              emojis: [
+                "🔴",
+                "🟠",
+                "🟡",
+                "🟢",
+                "🔵",
+                "🟣",
+                "🟤",
+                "🔘",
+                "⚫",
+                "⚪",
+                "🟥",
+                "🟧",
+                "🟨",
+                "🟩",
+                "🟦",
+                "🟪",
+                "🟫",
+                "⬛",
+                "⬜",
+                "◼️",
+                "◾",
+                "◽",
+                "▪️",
+                "▫️",
+                "🔶",
+                "🔸",
+                "🔷",
+                "🔹",
+                "🔺",
+                "🔻",
+                "🔲",
+                "🔳",
+              ],
+            });
+          }
         });
         targetTugas.remove();
         localStorage.setItem("tugas", TaskList.innerHTML);
+        tugascekKosongga();
       }
     });
   }
@@ -210,6 +266,12 @@ function loading() {
       darkmode.classList.add("reappear");
       footer.classList.add("reappear");
       AOS.init();
+      // salam
+      new TypeIt("#textKetik", {
+        strings: "Selamat datang di website saya",
+        speed: 200,
+        loop: true,
+      }).go();
     }
   }, kataKata[index].delay);
 }
