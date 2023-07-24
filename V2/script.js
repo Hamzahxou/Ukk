@@ -268,7 +268,7 @@ function loading() {
       AOS.init();
       // salam
       new TypeIt("#textKetik", {
-        strings: "Selamat datang di website saya",
+        strings: "Selamat datang di website saya ",
         speed: 200,
         loop: true,
       }).go();
