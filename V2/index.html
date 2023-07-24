@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hamzahxou</title>
+    <!-- animasi -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- icon -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <!-- syle -->
     <link rel="stylesheet" href="home.css" />
+    <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- typing -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@0.8.0/dist/js-confetti.browser.js"></script>
   </head>
   <body class="dark">
     <div class="loadingHalo"></div>
@@ -38,9 +46,8 @@
               data-aos="fade-right"
               data-aos-delay="100"
               data-aos-duration="1000"
-            >
-              Selamat datang di website saya
-            </h1>
+              id="textKetik"
+            ></h1>
 
             <p
               data-aos="fade-right"
@@ -182,6 +189,10 @@
           </form>
           <h3>Task:</h3>
           <div class="outputList">
+            <span
+              class="testt"
+              style="font-style: italic; font-size: 14px; text-align: center"
+            ></span>
             <ul class="Task">
               <li id="namaTugas">Membuat rangkuman materi dasar html</li>
               <li id="namaTugas">Memahami penggunaan js sebelum react</li>
