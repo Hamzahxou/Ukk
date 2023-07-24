@@ -50,8 +50,9 @@
         color: var(--bg-dark-2);
       }
       .container hr {
+        position: relative;
         width: 100%;
-        height: 1px;
+        height: 2px;
         border: 0;
         background-image: linear-gradient(
           to right,
@@ -60,17 +61,29 @@
           rgba(0, 0, 0, 0)
         );
       }
+
       .container a::before {
         content: ">>>";
         margin-right: 20px;
-        animation: animasikiri 2s infinite forwards alternate;
+        animation: animasikiri 3s infinite forwards alternate;
       }
       .container a::after {
         content: "<<<";
         margin-left: 20px;
-        animation: animasikanan 2s infinite forwards alternate;
+        animation: animasikanan 3s infinite forwards alternate;
       }
 
+      .container a:first-child:before {
+        margin-right: 0;
+      }
+      .container a:first-child:after {
+        margin-left: 0;
+      }
+      .container a:first-child:before,
+      .container a:first-child:after {
+        animation-duration: 2.5s;
+        animation-timing-function: ease-out;
+      }
       @keyframes animasikiri {
         from {
           margin-right: 8px;
